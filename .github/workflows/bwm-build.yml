@@ -1,22 +1,18 @@
 name: BWM Build (22-slot generalszh.exe)
 
-# Builds a Zero Hour engine (generalszh.exe) carrying the BWM 22-slot sidebar
-# patch, using the SAME vc6-weekly preset as TheSuperHackers official weekly
-# release (x87-FPU / retail-faithful -> safe for multiplayer determinism).
-# Run it manually from the Actions tab; download the artifact when it's green.
-
 on:
   workflow_dispatch:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   build-bwm-zerohour:
     uses: ./.github/workflows/build-toolchain.yml
     with:
-      game: "GeneralsMD"     # GeneralsMD = Zero Hour -> output is generalszh.exe
-      preset: "vc6-weekly"   # identical compiler/flags to the official weekly build
-      tools: false           # build only the game exe (skip WorldBuilder etc. = faster)
+      game: "GeneralsMD"
+      preset: "vc6-weekly"
+      tools: false
       extras: false
     secrets: inherit
