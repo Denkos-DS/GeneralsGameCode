@@ -3280,7 +3280,7 @@ void ControlBar::initSpecialPowershortcutBar( Player *player)
 		windowName.format( tempName, i+1 );
 		id = TheNameKeyGenerator->nameToKey( windowName.str() );
 		m_specialPowerShortcutButtons[ i ] =
-			TheWindowManager->winGetWindowFromId( m_specialPowerShortcutParent, id );
+			TheWindowManager->winGetWindowFromId( nullptr, id );
 
 		if (m_specialPowerShortcutButtons[ i ] != nullptr)
 		{
@@ -3291,7 +3291,7 @@ void ControlBar::initSpecialPowershortcutBar( Player *player)
 			windowName.format( parentName, i+1 );
 			id = TheNameKeyGenerator->nameToKey( windowName.str() );
 			m_specialPowerShortcutButtonParents[ i ] =
-				TheWindowManager->winGetWindowFromId( m_specialPowerShortcutParent, id );
+				TheWindowManager->winGetWindowFromId( nullptr, id );
 		}
 	}
 
