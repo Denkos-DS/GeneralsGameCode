@@ -29,7 +29,8 @@
 //						with to interact with the game windowing system.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "PreRTS.h"	// This must go first in EVERY cpp file in the GameEngine
+#include "PreRTS.h"
+#include <stdio.h>	// This must go first in EVERY cpp file in the GameEngine
 
 #include "Common/Debug.h"
 #include "Common/Language.h"
@@ -1339,7 +1340,7 @@ GameWindow *GameWindowManager::winCreate( GameWindow *parent,
 	if( window == nullptr )
 	{
 
-		DEBUG_LOG(( "WinCreate error: Could not allocate new window" ));
+		DEBUG_LOG(( "WinCreate error: Could not allocate new window" )); { FILE *_bwmf=fopen("bwm_diag.txt","a"); if(_bwmf){ fprintf(_bwmf,"winCreate NULL\n"); fclose(_bwmf); } }
 #ifndef FINAL
 		{
 			GameWindow *win;
