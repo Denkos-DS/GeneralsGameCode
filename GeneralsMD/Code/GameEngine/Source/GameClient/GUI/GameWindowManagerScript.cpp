@@ -2032,6 +2032,7 @@ static GameWindow *createWindow( char *type,
 	// Check to see if this window has a parent
   parent = peekWindow();
 
+  { AsciiString _bwmn = TheNameKeyGenerator->keyToName((NameKeyType)id); FILE *_bwmf=fopen("bwm_diag.txt","a"); if(_bwmf){ fprintf(_bwmf,"cw %s type=%s\n", _bwmn.str(), type); fclose(_bwmf); } }
   // If this is a regular window just create it
   if( strcmp( type, "USER" ) == 0 )
 	{
